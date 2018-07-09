@@ -1,0 +1,41 @@
+# BT626
+Objects/
+Listings/
+App.bin/
+JLinkLog.txt
+
+# Keil
+OBJ/
+LST/
+
+# IAR
+Exe/
+List/
+Obj/
+
+*.o
+*.bpi
+*.cout
+*.pbd
+*.browse
+*.d
+*.crf
+*.map
+*.lst
+*.axf
+*.htm
+
+*.TMP
+
+# SourceInsight
+*.IAB
+*.IAD
+*.IMB
+*.IMD
+*.PFI
+*.PO
+*.PR
+*.PRI
+*.PS
+*.SearchResults
+*.WK3
