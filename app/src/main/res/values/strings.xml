@@ -1,0 +1,123 @@
+<resources>
+    <string name="appName">FeasyBlue</string>
+    <string name="appVersion">3.0.8</string>
+
+    //pull down and refresh
+    <string name="pull_to_refresh">Pull to refresh</string>
+    <string name="release_to_refresh">Release to refresh</string>
+    <string name="refreshing">Refreshing</string>
+    <string name="not_updated_yet">Do not updated yet</string>
+    <string name="updated_at">Updated at %1$s</string>
+    <string name="updated_just_now">Updated just now</string>
+    <string name="time_error">Time error</string>
+
+    // footer
+    <string name="communication">Communication</string>
+    <string name="setting">Setting</string>
+    <string name="about">About</string>
+
+    // search device activity
+    <string name="search">search</string>
+    <string name="searching">searching...</string>
+    <string name="searched">searched</string>
+    <string name="rssi">RSSI</string>
+    <string name="mac">MAC: </string>
+    <string name="paired">[Paired]</string>
+
+    // throughput activity
+    <string name="clear">Clear</string>
+    <string name="receive">Receive</string>
+    <string name="send">Send</string>
+    <string name="byt">byte</string>
+    <string name="packge">packge </string>
+    <string name="sendFile">Send File</string>
+    <string name="sendPackge">Send</string>
+    <string name="intervalSend">Loop sending</string>
+    <string name="connected">connected</string>
+    <string name="disconnected">disconnected</string>
+    <string name="connecting">connecting</string>
+    <string name="default_interval_send_timer">100</string>
+    <string name="openSendFileError">Open file error</string>
+    <string name="stop">Stop</string>
+    <string name="digitsHex">0123456789abcdefABCDEF</string>
+    <string name="serviceInfo">Services Information</string>
+    <string name="characteristicInfo">Characteristic Information</string>
+    <string name="deviceInfo">Device Information</string>
+    <string name="modelNumber">Model Number</string>
+    <string name="manufacturerName">Manufacturer Name</string>
+    <string name="serialNumber">Serial Number(MAC)</string>
+    <string name="hardwareRevision">Hardware Revision</string>
+    <string name="softwareRevision">Software Revision</string>
+    <string name="save">Save</string>
+    <string name="advData">Advertising  Data</string>
+    <string name="transmissionConfiguration">Transmission Configuration</string>
+    <string name="byteString">Byte</string>
+    <string name="intervalHint">Interval</string>
+
+    <!--SettingActivity-->
+    <string name="properitiesDefining">Properities defining</string>
+    <string name="settingTitle">Setting</string>
+    <string name="connectTest">BT connection test</string>
+    <string name="OTAUpgrade">OTA upgrade (SPP)</string>
+    <string name="quickConnection">Quick connection</string>
+
+    <!--parameterModify-->
+    <string name="begin">Begin</string>
+    <string name="deviceName">Name</string>
+    <string name="pin">Pin</string>
+    <string name="baud">Baud</string>
+    <string name="customizeSelect">Customize Select</string>
+    <string name="customizeCommand">Custom ∧</string>
+    <string name="customizeCommandHid">Custom ∨</string>
+    <string name="none">none</string>
+    <string name="compeletCount">Count</string>
+    <string name="name">Name</string>
+    <string name="addr">Address</string>
+    <string name="openEngineSuccess">Open engine success</string>
+    <string name="openEngineTimeOut">Open engine time out</string>
+    <string name="openEngineFailed">Open engine failure</string>
+    <string name="read">Read</string>
+    <string name="version">Version</string>
+    <string name="success">Successful</string>
+    <string name="failed">Failed</string>
+    <string name="same">The same as</string>
+    <string name="modify">Modifier</string>
+    <string name="timeout">Time out</string>
+    <string name="modifyComplete">Modifier complete</string>
+    <string name="password">Password</string>
+    <string name="modifyCompleteCount">Modify the number of completed</string>
+    <string name="commandNull">AT Command Null</string>
+    <!--ota-->
+    <string name="pleaseSelectTheFirmware">Please select firmware</string>
+    <string name="openFile">Open file</string>
+    <string name="selectedFirmware">Selected</string>
+    <string name="notToChoose">None</string>
+    <string name="type">Type</string>
+    <string name="versionApp">APP version</string>
+    <string name="bootLoader">Bootloader</string>
+    <string name="module">Module</string>
+    <string name="firmware">Firmware</string>
+    <string name="toUpgrade">Upgrading</string>
+    <string name="restoreTheFactorySettings">Upgrade and back to default</string>
+    <string name="selectDfu">Please select a dfu file</string>
+    <string name="dfuIllegal">Illegal file</string>
+    <string name="waitingForUpdate">Waiting for update</string>
+    <string name="updating">Updating</string>
+    <string name="updateSuccess">Successful</string>
+    <string name="updateFailed">Failed</string>
+    <string name="nameNotMatch">Type not match</string>
+    <string name="versionIsLow">Firmware version is low</string>
+    <string name="blIsHight">BL is hight</string>
+    <string name="dfuFileError">dfu file error</string>
+
+    <!--about-->
+    <string name="company">Company</string>
+    <string name="company_name">Shenzhen Feasycom Technology Co.,Ltd</string>
+    <string name="tel_number">+86-0755-27924639</string>
+    <string name="tel">Tel</string>
+    <string name="web">Web</string>
+    <string name="web_url">www.feasycom.com</string>
+    <string name="mail">E-mail</string>
+    <string name="mail_addr">support@feasycom.com</string>
+    <string name="wc">WeChat Official AC</string>
+</resources>

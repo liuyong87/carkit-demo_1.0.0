@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/header_text_text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_grey"
+            android:paddingBottom="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/icon_r" />
+
+            <TextView
+                android:id="@+id/version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout style="@style/aboutLL">
+
+                <TextView
+                    style="@style/moduleTV"
+                    android:text="@string/company" />
+
+                <TextView
+                    style="@style/aboutRightTV"
+                    android:text="@string/company_name" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/aboutLL">
+
+                <TextView
+                    style="@style/moduleTV"
+                    android:text="@string/tel"
+                    android:textColor="@color/about_text" />
+
+                <TextView
+                    style="@style/aboutRightTV"
+                    android:autoLink="phone"
+                    android:text="@string/tel_number" />
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/aboutLL">
+
+                <TextView
+                    style="@style/moduleTV"
+                    android:text="@string/web"
+                    android:textColor="@color/about_text" />
+
+                <TextView
+                    style="@style/aboutRightTV"
+                    android:autoLink="web"
+                    android:text="@string/web_url" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/aboutLL">
+
+                <TextView
+                    style="@style/moduleTV"
+                    android:text="@string/mail"
+                    android:textColor="@color/about_text" />
+
+                <TextView
+                    style="@style/aboutRightTV"
+                    android:autoLink="email"
+                    android:text="@string/mail_addr" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/qr"
+                style="@style/aboutLL">
+
+                <TextView
+                    style="@style/moduleTV"
+                    android:text="@string/wc"
+                    android:textColor="@color/about_text" />
+
+                <TextView
+                    style="@style/aboutRightTV"
+                    android:text="Feasycom" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/qr" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/aboutLL">
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/footer" />
+</LinearLayout>

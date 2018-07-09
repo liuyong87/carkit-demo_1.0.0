@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/deviceInformationTitle"
+        android:layout_marginTop="20dp"
+        android:text="@string/deviceInfo"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        style="@style/deviceInformationTitle"
+        android:text="@string/modelNumber"/>
+    <TextView
+        android:id="@+id/modelNumber"
+        style="@style/deviceInformation" />
+
+
+    <TextView
+        style="@style/deviceInformationTitle"
+        android:text="@string/manufacturerName"/>
+    <TextView
+        android:id="@+id/manufacturerName"
+        style="@style/deviceInformation" />
+
+
+    <TextView
+        style="@style/deviceInformationTitle"
+        android:text="@string/serialNumber"/>
+    <TextView
+        style="@style/deviceInformation"
+        android:id="@+id/serialNumber"/>
+
+    <TextView
+        style="@style/deviceInformationTitle"
+        android:text="@string/hardwareRevision"/>
+    <TextView
+        style="@style/deviceInformation"
+        android:id="@+id/hardwareRevision" />
+
+    <TextView
+        style="@style/deviceInformationTitle"
+        android:text="@string/softwareRevision"/>
+    <TextView
+        style="@style/deviceInformation"
+        android:id="@+id/softwareRevision" />
+</LinearLayout>

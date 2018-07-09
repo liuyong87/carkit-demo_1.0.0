@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.feasycom.feasyblue">
+
+    <!-- 获取activity栈 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 蓝牙SPP权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 蓝牙BLE权限 -->
+    <uses-feature android:name="android.hardware.bluetooth_le" />
+
+    <!-- 安卓6蓝牙权限，必须打开定位权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+
+    <!-- 文件数据权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 向SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 添加可以向外拨打电话的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--
+    摇一摇权限
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    -->
+    <!-- 强制横屏权限 -->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/appName"
+        android:largeHeap="true"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".Activity.SearchDeviceActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.feasycom.service.AtCommandService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.feasycom.service.SmartLinkService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.feasycom.service.OTASPPService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".Activity.ThroughputActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ServiceSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ParameterModificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ParameterModificationDeviceListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ParameterModifyInformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.OtaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.OtaDeviceListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.QRCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.CharacteristicDetialActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.QuickConnectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.filterDeviceActivity"></activity>
+    </application>
+
+</manifest>
