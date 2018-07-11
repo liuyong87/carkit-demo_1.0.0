@@ -22,8 +22,11 @@ import com.feasycom.feasyblue.Controler.ActivityCollector;
 import com.feasycom.feasyblue.R;
 import com.feasycom.feasyblue.Widget.RefreshableView;
 
+import java.lang.ref.WeakReference;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,6 +56,10 @@ public class OtaDeviceListActivity extends BaseActivity {
     private BluetoothDeviceWrapper bluetoothDeviceWrapper;
     Queue<BluetoothDeviceWrapper> deviceQueue = new LinkedList<BluetoothDeviceWrapper>();
     private final int SCAN_TIME = 20000;
+
+    public static String mac_tmp;
+    private Timer timerUI;
+    private TimerTask taskUI;
 
     public static void actionStart(Context context, int operation) {
         Intent intent = new Intent(context, OtaDeviceListActivity.class);
@@ -95,7 +102,7 @@ public class OtaDeviceListActivity extends BaseActivity {
                 });
             }
         }, 0);
-        fscSppApi.startScan(SCAN_TIME);
+        //fscSppApi.startScan(SCAN_TIME);
     }
 
     @Override
@@ -112,6 +119,10 @@ public class OtaDeviceListActivity extends BaseActivity {
         if (fscSppApi != null) {
             setCallBacks();
         }
+        fscSppApi.startScan(SCAN_TIME);
+        timerUI = new Timer();
+        taskUI = new OtaDeviceListActivity.UITimerTask(new WeakReference<OtaDeviceListActivity>((OtaDeviceListActivity) activity));
+        timerUI.schedule(taskUI, 100, 200);
     }
 
     @OnItemClick(R.id.devicesList)
@@ -120,6 +131,7 @@ public class OtaDeviceListActivity extends BaseActivity {
         fscSppApi.stopScan();
         bluetoothDeviceWrapper = (BluetoothDeviceWrapper) adapter.getItem(position);
         fscSppApi.connect(bluetoothDeviceWrapper.getAddress());
+        mac_tmp = bluetoothDeviceWrapper.getAddress();
     }
 
     @Override
@@ -222,19 +234,44 @@ public class OtaDeviceListActivity extends BaseActivity {
                     }
                 } else {
                     deviceQueue.offer(device);
+                    /*
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            /**
-                             * queue take an element return true / false
-                             */
                             adapter.addDevice(deviceQueue.poll());
                             adapter.notifyDataSetChanged();
                         }
-                    });
+                    });*/
                 }
 
             }
         });
+    }
+
+    class UITimerTask extends TimerTask {
+        private WeakReference<OtaDeviceListActivity> activityWeakReference;
+
+        public UITimerTask(WeakReference<OtaDeviceListActivity> activityWeakReference) {
+            this.activityWeakReference = activityWeakReference;
+        }
+
+        @Override
+        public void run() {
+            activityWeakReference.get().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    activityWeakReference.get().getAdapter().addDevice(activityWeakReference.get().getDeviceQueue().poll());
+                    activityWeakReference.get().getAdapter().notifyDataSetChanged();
+                }
+            });
+        }
+    }
+
+    public SearchDeviceListAdapter getAdapter() {
+        return adapter;
+    }
+
+    public Queue<BluetoothDeviceWrapper> getDeviceQueue() {
+        return deviceQueue;
     }
 }

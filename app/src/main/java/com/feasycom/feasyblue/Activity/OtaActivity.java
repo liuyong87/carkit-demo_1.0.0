@@ -43,6 +43,8 @@ import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
+import static com.feasycom.feasyblue.Activity.OtaDeviceListActivity.mac_tmp;
+
 public class OtaActivity extends BaseActivity {
 
     @BindView(R.id.header_left_image)
@@ -107,6 +109,7 @@ public class OtaActivity extends BaseActivity {
     private String moduleBootLoaderVersionString;
     private String moduleModleNameString;
     private Handler handler = new Handler();
+    private int flag = 0;
     /**
      * add for test
      */
@@ -506,10 +509,17 @@ public class OtaActivity extends BaseActivity {
                         moduleBootLoaderVersionString = null;
                         moduleModleNameString = null;
                     }
+                    /*
                     if (fscSppApi.isConnected()) {
-//                        LogUtil.i(TAG,"disconnect 8");
+//                       LogUtil.i(TAG,"disconnect 8");
                         fscSppApi.disconnect();
+                        flag = 1;
+                    }*/
+
+                    if(!fscSppApi.isConnected()){
+                        fscSppApi.connect(mac_tmp);
                     }
+
                 } else if (dataString.contains("C")) {
                     moduleVersionString = null;
 //                                moduleBootLoaderVersionString = "536";
@@ -525,7 +535,6 @@ public class OtaActivity extends BaseActivity {
                     moduleBootLoaderVersionString = null;
                     moduleModleNameString = null;
                 }
-
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
