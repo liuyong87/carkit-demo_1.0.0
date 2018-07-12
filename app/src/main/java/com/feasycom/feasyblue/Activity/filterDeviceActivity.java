@@ -115,7 +115,7 @@ public class filterDeviceActivity extends BaseActivity {
         rssiSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {//监听进度条
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                rssiValueText.setText(String.valueOf(progress-100) + " dB");
+                rssiValueText.setText(":  "+ String.valueOf(progress-100) + " dB");
                 filterValue = progress - 100;//让进度条初始值为-100
 
                 SettingConfigUtil.saveData(getApplicationContext(), "filter_value", filterValue+100);

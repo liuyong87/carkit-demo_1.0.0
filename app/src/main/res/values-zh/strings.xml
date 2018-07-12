@@ -25,6 +25,8 @@
     <string name="paired">[已配对]</string>
     <string name="sort">排序</string>
     <string name="filter">过滤</string>
+    <string name="filter_by_rssi">RSSI过滤</string>
+    <string name="minimum_rssi">过滤阈值</string>
 
     <!--throughput activity-->
     <string name="clear">清除</string>

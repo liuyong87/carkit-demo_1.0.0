@@ -2,4 +2,6 @@
 <resources>
     <string name="sort">Sort</string>
     <string name="filter">Filter</string>
+    <string name="filter_by_rssi">Filter by RSSI</string>
+    <string name="minimum_rssi">Minimum RSSI:</string>
 </resources>

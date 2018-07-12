@@ -66,6 +66,7 @@ public class ServiceSelectActivity extends BaseActivity {
     private TextView advData;
     private View listViewHeader;
     private ServicesExpandableListAdapter servicesExpandableListAdapter = null;
+    private int group;
 
     private FscBleCentralApi fscBleCentralApi;
     private Activity activity;
@@ -149,10 +150,38 @@ public class ServiceSelectActivity extends BaseActivity {
             flagLL.setVisibility(View.GONE);
         }
         flag.setText(deviceWrapper.getFlag());
-        if (deviceWrapper.getIncompleteServiceUUIDs_16bit() == null) {
+        /**
+         *display all 16bit UUID
+         */
+        for(group=0;group<4;group++){
+            if(deviceWrapper.getIncompleteServiceUUIDs_16bit(group) == null || group == 3){
+                break;
+            }
+        }
+        switch (group){
+            case 0:
+                incompleteServiceUUID16BitLL.setVisibility(View.GONE);
+                break;
+            case 1:
+                incompleteServiceUUID16Bit.setText(deviceWrapper.getIncompleteServiceUUIDs_16bit(0));
+                break;
+            case 2:
+                incompleteServiceUUID16Bit.setText(deviceWrapper.getIncompleteServiceUUIDs_16bit(0)+","+deviceWrapper.getIncompleteServiceUUIDs_16bit(1));
+                break;
+            case 3:
+                incompleteServiceUUID16Bit.setText(deviceWrapper.getIncompleteServiceUUIDs_16bit(0)+","+deviceWrapper.getIncompleteServiceUUIDs_16bit(1)+","+deviceWrapper.getIncompleteServiceUUIDs_16bit(2));
+                break;
+            default:
+                break;
+        }
+        /*
+        if (deviceWrapper.getIncompleteServiceUUIDs_16bit(0) == null) {
             incompleteServiceUUID16BitLL.setVisibility(View.GONE);
         }
-        incompleteServiceUUID16Bit.setText(deviceWrapper.getIncompleteServiceUUIDs_16bit());
+        else {
+            incompleteServiceUUID16Bit.setText(deviceWrapper.getIncompleteServiceUUIDs_16bit(0)+","+deviceWrapper.getIncompleteServiceUUIDs_16bit(1));
+        }
+        */
         if (deviceWrapper.getIncompleteServiceUUIDs_128bit() == null) {
             incompleteServiceUUID128BitLL.setVisibility(View.GONE);
         }

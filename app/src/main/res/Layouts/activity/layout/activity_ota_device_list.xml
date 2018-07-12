@@ -16,6 +16,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/sort"
+            android:textStyle="bold"
+            android:background="#ffffff"
+            android:showDividers="end"
             android:textAllCaps="false" />
 
         <Button
@@ -24,6 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/filter"
+            android:textStyle="bold"
+            android:background="#ffffff"
+            android:showDividers="end"
             android:textAllCaps="false" />
 
     </LinearLayout>

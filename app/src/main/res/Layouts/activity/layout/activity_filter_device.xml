@@ -19,7 +19,7 @@
             android:id="@+id/filter_switch"
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:text="Filter by RSSI" />
+            android:text="@string/filter_by_rssi" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -30,12 +30,14 @@
                 android:id="@+id/min_rssi_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Minimum RSSI:" />
+                android:textColor="@color/black"
+                android:text="@string/minimum_rssi" />
 
             <TextView
                 android:id="@+id/rssi_value_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="-100 dB" />
         </LinearLayout>
 
